@@ -1,0 +1,14 @@
+<button onclick="heroDetails()">{{hero.name | uppercase}} [see details]</button>
+<h3>Id: {{hero.id}}</h3>
+
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+  </div>
+
+<script>
+const heroDetails = () =>{
+    let heroId = {{hero.id}};
+    alert("my id is" + heroId)
+}
+</script>
