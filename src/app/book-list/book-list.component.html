@@ -1,0 +1,30 @@
+<style>
+    td,
+    th {
+        margin: 5px;
+        padding: 10px;
+    }
+</style>
+
+<h2>Book List </h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>S/L</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Copies</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.copies}}</td>
+        </tr>
+    </tbody>
+</table>

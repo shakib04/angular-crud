@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Book } from './book';
+import { Book } from './book.model';
 import { BookService } from './book.service';
 
 @Component({
@@ -21,7 +21,7 @@ ngOnInit(){
   public getBookes(): void {
     this.bookService.getBooks().subscribe(
       (response: Book[]) => {
-        this.books = response;
+        //this.books = response;
         console.log(this.books);
       },
       (error: HttpErrorResponse) => {
