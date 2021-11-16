@@ -1,0 +1,17 @@
+<h2>Book Edit</h2>
+<form (ngSubmit)="onSubmit()">
+    <h3> Name</h3>
+    <input type="text" class="form-control" id="name" [(ngModel)]="book.name" name="name">
+
+    <h3>Author</h3>
+    <input type="text" class="form-control" id="author" [(ngModel)]="book.author" name="author">
+
+    <h3>Publisher</h3>
+    <input type="text" class="form-control" id="publisher" [(ngModel)]="book.publisher" name="publisher">
+
+    <h3>Copies</h3>
+    <input type="text" class="form-control" id="copies" [(ngModel)]="book.copies" name="copies">
+
+    <h3></h3>
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>

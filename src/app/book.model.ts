@@ -1,7 +1,7 @@
-export interface Book {
-    id: number;
-    name: string;
-    author: string;
-    publisher: string;
-    copies: number;
+export class Book {
+    id!: number;
+    name!: string;
+    author!: string;
+    publisher!: string;
+    copies!: number;
   }

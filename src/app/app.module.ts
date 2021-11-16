@@ -8,6 +8,9 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookListComponent } from './book-list/book-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CreateBookComponent } from './create-book/create-book.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
+import { DeleteBookComponent } from './delete-book/delete-book.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { AppRoutingModule } from './app-routing.module';
     HeroesComponent,
     HeroDetailComponent,
     BookListComponent,
-    AppRoutingModule
+    CreateBookComponent,
+    UpdateBookComponent,
+    DeleteBookComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@
     }
 </style>
 
+<a routerLink="create-book" routerLinkActive="active" class="nav-link" >Add Book</a>
 <h2>Book List </h2>
 
 <table border="1">
@@ -16,6 +17,7 @@
             <th>Author</th>
             <th>Publisher</th>
             <th>Copies</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +27,12 @@
             <td>{{book.author}}</td>
             <td>{{book.publisher}}</td>
             <td>{{book.copies}}</td>
+            <td>
+                <button (click) = "updateBook(book.id)">Update</button>
+            </td>
+            <td>
+                <button (click) = "deleteBook(book.id)">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>

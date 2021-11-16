@@ -14,7 +14,19 @@ export class BookService {
     return this.http.get<Book[]>(`http://localhost:8080/book`);
   }
 
-  public addBook(employee: Book): Observable<Book> {
-    return this.http.post<Book>(`http://localhost:8080/book`, employee);
+  public addBook(book: Book): Observable<Object> {
+    return this.http.post(`http://localhost:8080/book`, book);
+  }
+
+  getBookById(id: number): Observable<Book>{
+    return this.http.get<Book>(`http://localhost:8080/book/${id}`)
+  }
+
+  updateBook(book: Book){
+    return this.http.put(`http://localhost:8080/book/`,book)
+  }
+
+  deleteBook(id: number):Observable<Object>{
+    return this.http.delete(`http://localhost:8080/book/${id}`)
   }
 }
