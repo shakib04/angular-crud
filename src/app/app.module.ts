@@ -13,6 +13,7 @@ import { UpdateBookComponent } from './update-book/update-book.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
 import { SuccessSweetAlertComponent } from './success-sweet-alert/success-sweet-alert.component';
 import { DeleteSweetAlertComponent } from './delete-sweet-alert/delete-sweet-alert.component';
+import { BitsPoliciesComponent } from './bits-policies/bits-policies.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DeleteSweetAlertComponent } from './delete-sweet-alert/delete-sweet-ale
     DeleteBookComponent,
     SuccessSweetAlertComponent,
     DeleteSweetAlertComponent,
+    BitsPoliciesComponent,
     
   ],
   imports: [
