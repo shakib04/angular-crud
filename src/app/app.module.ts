@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
+import { SuccessSweetAlertComponent } from './success-sweet-alert/success-sweet-alert.component';
+import { DeleteSweetAlertComponent } from './delete-sweet-alert/delete-sweet-alert.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { DeleteBookComponent } from './delete-book/delete-book.component';
     CreateBookComponent,
     UpdateBookComponent,
     DeleteBookComponent,
+    SuccessSweetAlertComponent,
+    DeleteSweetAlertComponent,
     
   ],
   imports: [
