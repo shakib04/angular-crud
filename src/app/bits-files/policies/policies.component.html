@@ -1,0 +1,45 @@
+<!-- <button>Bits Policies</button> -->
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+<table>
+    <caption style="font-size: 25px;">Bits Policies</caption>
+   <thead>
+    <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>View</th>
+        <th>Action</th>
+    </tr>
+   </thead>
+
+    <tbody>
+        <tr>
+            <td>Template - Word - Letter</td>
+            <td>Communication Templates</td>
+            <td>Public</td>
+            <td>
+                <button class="btn btn-outline-primary mb-2 mr-2" (click)="openLg(content)">View</button>
+            </td>
+        </tr>
+        <tr>
+            
+        </tr>
+        
+    </tbody>
+</table>
+

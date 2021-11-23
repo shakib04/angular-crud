@@ -18,15 +18,17 @@ ngOnInit(){
   this.getBookes(); 
 }
 
+src = 'https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf';
+
   public getBookes(): void {
-    this.bookService.getBooks().subscribe(
-      (response: Book[]) => {
-        //this.books = response;
-        console.log(this.books);
-      },
-      (error: HttpErrorResponse) => {
-        //alert(error.message);
-      }
-    );
+    // this.bookService.getBooks().subscribe(
+    //   (response: Book[]) => {
+    //     //this.books = response;
+    //     console.log(this.books);
+    //   },
+    //   (error: HttpErrorResponse) => {
+    //     //alert(error.message);
+    //   }
+    // );
   }
 }

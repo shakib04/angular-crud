@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
+import { PdfViewerModule } from 'ng2-pdf-viewer';// <- import PdfViewerModule
+
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
@@ -13,7 +15,10 @@ import { UpdateBookComponent } from './update-book/update-book.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
 import { SuccessSweetAlertComponent } from './success-sweet-alert/success-sweet-alert.component';
 import { DeleteSweetAlertComponent } from './delete-sweet-alert/delete-sweet-alert.component';
-import { BitsPoliciesComponent } from './bits-policies/bits-policies.component';
+import { PoliciesComponent } from './bits-files/policies/policies.component';
+import { TemplatesComponent } from './bits-files/templates/templates.component';
+import { PdfComponent } from './pdf/pdf.component';
+import { FormsComponent } from './bits-files/forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +31,18 @@ import { BitsPoliciesComponent } from './bits-policies/bits-policies.component';
     DeleteBookComponent,
     SuccessSweetAlertComponent,
     DeleteSweetAlertComponent,
-    BitsPoliciesComponent,
+    PoliciesComponent,
+    TemplatesComponent,
+    PdfComponent,
+    FormsComponent,
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
