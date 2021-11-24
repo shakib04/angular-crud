@@ -10,6 +10,9 @@ import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
+  active = 1;
+
   title = 'angular-tour-of-heroes';
   public books!: Book[];
 

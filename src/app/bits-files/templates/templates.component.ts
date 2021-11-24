@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { type } from 'os';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { TemplatesService } from './templates.service';
 
 @Component({
@@ -10,8 +11,13 @@ import { TemplatesService } from './templates.service';
 export class TemplatesComponent implements OnInit {
 
   constructor(
+    private modalService: NgbModal,
     protected templatesService: TemplatesService,
   ) { }
+
+  openLg(content: any) {
+    this.modalService.open(content, { size: 'lg' });
+  }
 
   ngOnInit(): void {
   }

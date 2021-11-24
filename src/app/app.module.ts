@@ -22,6 +22,7 @@ import { FormsComponent } from './bits-files/forms/forms.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UploadPolicyComponent } from './bits-files/upload-policy/upload-policy.component';
+import { UploadTemplatesComponent } from './bits-files/templates/upload-templates.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { UploadPolicyComponent } from './bits-files/upload-policy/upload-policy.
     PdfComponent,
     FormsComponent,
     UploadPolicyComponent,
+    UploadTemplatesComponent
     
   ],
   imports: [

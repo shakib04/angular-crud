@@ -1,58 +1,207 @@
-<!-- <button>Template's</button> -->
 
-<h4>Select File</h4>
-<input type="file" name="" id="">
-<h4>Select Category</h4>
-<select name="" id="">
-  <option value="">Category 1</option>
-  <option value="">Category 2</option>
-</select>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
 
-<h4>Select Type</h4>
-<select name="" id="">
-  <option value="">Public</option>
-  <option value="">Private</option>
-</select>
-<h3></h3>
 
-<button class="btn btn-primary">Upload File</button>
+<div class="btn-groups text-right ">
+  <button routerLink="/upload-templates" class="btn btn-dark btn-sm px-md-3" data-placement="top" data-toggle="tooltip"
+    title="View" type="submit">
+    Upload New Templates
+  </button>
+</div>
 
-<table aria-describedby="page-heading" class="table table-hover">
-  <caption style="font-size: 25px;">Bits Templates</caption>
+
+<caption style="font-size: 25px;" class="text-center d-block">Bits Templates</caption>
+
+<table aria-describedby="page-heading" class="table table-hover m-3">
+
   <thead>
-  <tr>
-    <th scope="col">S/L</th>
-    <th scope="col" class="text-nowrap">Title</th>
-    <th scope="col">Category</th>
-    <th scope="col">Type</th>
-    <th scope="col">Download</th>
-    <th scope="col">Action</th>
-  </tr>
+    <tr>
+      <th scope="col">S/L</th>
+      <th scope="col" class="text-nowrap">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Type</th>
+      <th scope="col">Download</th>
+      <th scope="col" colspan="2">Action</th>
+    </tr>
   </thead>
 
   <tbody>
-  <tr>
-    <td>Template - Word - Letter</td>
-    <td>Communication Templates</td>
-    <td>Public</td>
-    <td>
-      <button class="btn btn-primary btn-sm"
-              (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-        Download
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td>Template - Letterhead - Internal 2</td>
-    <td>Communication Templates</td>
-    <td>Public</td>
-    <td>
-      <button class="btn btn-primary btn-sm"
-              (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
-        Download
-      </button>
-    </td>
-  </tr>
+    <tr>
+      <td>01</td>
+      <td>Template - Word - Letter</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+          Download
+        </button>
+      </td>
+
+      <td>
+        <button class="btn btn-secondary btn-sm m-1"
+          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+          Edit
+        </button>
+        <button class="btn btn-danger btn-sm m-1" (click)="openLg(content)">
+          Remove
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Template - Letterhead - Internal 2</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+          Download
+        </button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>03</td>
+      <td>Template - Word - Letter</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+          Download
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Template - Letterhead - Internal 2</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+          Download
+        </button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>02</td>
+      <td>Template - Word - Letter</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+          Download
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Template - Letterhead - Internal 2</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+          Download
+        </button>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>02</td>
+      <td>Template - Word - Letter</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+          Download
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Template - Letterhead - Internal 2</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+          Download
+        </button>
+      </td>
+    </tr>
+
+
+
+    <tr>
+      <td>02</td>
+      <td>Template - Word - Letter</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+          Download
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Template - Letterhead - Internal 2</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+          Download
+        </button>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>02</td>
+      <td>Template - Word - Letter</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+          Download
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Template - Letterhead - Internal 2</td>
+      <td>Communication Templates</td>
+      <td>Public</td>
+      <td>
+        <button class="btn btn-primary btn-sm"
+          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+          Download
+        </button>
+      </td>
+    </tr>
 
   </tbody>
 </table>

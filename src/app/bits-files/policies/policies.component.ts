@@ -10,7 +10,8 @@ import { faSquare, faCheckSquare, faTimes, faPencilAlt } from '@fortawesome/free
 })
 export class PoliciesComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, 
+  constructor(
+    private modalService: NgbModal, 
     private library: FaIconLibrary) 
    {
       library.addIcons(faTimes, faPencilAlt);
