@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Book } from './book.model';
 import { BookService } from './book.service';
+import { pdfDefaultOptions } from 'ngx-extended-pdf-viewer';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ export class AppComponent implements OnInit{
   title = 'angular-tour-of-heroes';
   public books!: Book[];
 
-  constructor(private bookService: BookService){}
+  constructor(private bookService: BookService){
+    pdfDefaultOptions.assetsFolder = 'bleeding-edge';
+  }
 
 ngOnInit(){
   this.getBookes(); 

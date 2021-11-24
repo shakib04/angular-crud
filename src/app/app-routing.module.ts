@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsComponent } from './bits-files/forms/forms.component';
 import { PoliciesComponent } from './bits-files/policies/policies.component';
 import { TemplatesComponent } from './bits-files/templates/templates.component';
+import { UploadPolicyComponent } from './bits-files/upload-policy/upload-policy.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: 'update-book/:id', component: UpdateBookComponent },
   { path: 'bits-policies', component: PoliciesComponent },
   { path: 'bits-templates', component: TemplatesComponent },
+  { path: 'bits-forms', component: FormsComponent },
+  { path: 'upload-policy', component: UploadPolicyComponent },
   //{ path: '', redirectTo:'books',pathMatch: 'full' }
 ];
 

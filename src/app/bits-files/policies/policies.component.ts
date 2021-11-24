@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { faSquare, faCheckSquare, faTimes, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-policies',
@@ -8,7 +10,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PoliciesComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, 
+    private library: FaIconLibrary) 
+   {
+      library.addIcons(faTimes, faPencilAlt);
+   }
 
   ngOnInit(): void {
   }
