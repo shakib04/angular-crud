@@ -1,25 +1,49 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteModalTemplate } from './delete-templates.modal';
 
 import { TemplatesService } from './templates.service';
 
 @Component({
   selector: 'app-templates',
   templateUrl: './templates.component.html',
-  styleUrls: ['./templates.component.css']
+  styleUrls: ['./templates.component.css', './delete-templates.modal.css']
 })
 export class TemplatesComponent implements OnInit {
 
+  closeResult = '';
+
   constructor(
     private modalService: NgbModal,
-    protected templatesService: TemplatesService,
-  ) { }
-
-  openLg(content: any) {
-    this.modalService.open(content, { size: 'lg' });
+    protected templatesService: TemplatesService
+  ) {
+    
   }
 
   ngOnInit(): void {
+  }
+
+  delete(content2: any, content: any) {
+    this.modalService.open(content2, { ariaLabelledBy: 'modal-delete-titl2' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+      if (result == 'Yes') {
+        console.log(content2);
+        this.modalService.open(content);
+      }
+      
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+
   }
 
   public showPDF(fileName: string, fileUri: string, fileType: string): void {

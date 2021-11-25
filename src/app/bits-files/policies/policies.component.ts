@@ -24,4 +24,7 @@ export class PoliciesComponent implements OnInit {
     this.modalService.open(content, { size: 'lg' });
   }
 
+
+  
+
 }

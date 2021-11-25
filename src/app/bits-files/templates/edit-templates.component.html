@@ -1,7 +1,7 @@
 <div class="form-row m-4 container-fluid">
     <div class="form-group col-md-6">
         <label for="inputEmail4">Templates Name *</label>
-        <input type="text" class="form-control" id="Policy-Name" placeholder="Name will Populate after File Select">
+        <input type="text" value="Template - Word - Letter" class="form-control" id="Policy-Name" placeholder="Name will Populate after File Select">
     </div>
     <div class="form-group col-md-6">
         <label for="inputPassword4">Select File*</label>
@@ -11,7 +11,7 @@
         <label for="inputCategory">Select Category</label>
         <select id="inputCategory" class="form-control">
             <option selected>Choose...</option>
-            <option value="">Category 1</option>
+            <option value="Communication Templates" selected>Communication Templates</option>
             <option value="">Category 2</option>
         </select>
     </div>
@@ -20,12 +20,12 @@
         <label for="inputType">Select Type</label>
         <select id="inputType" class="form-control">
             <option selected>Choose...</option>
-            <option value="public">Public</option>
+            <option value="public" selected>Public</option>
             <option value="private">Private</option>
         </select>
     </div>
     <div class="form-group">
-        <button type="submit" routerLink="/bits-templates" class="btn btn-danger m-1">Cancel</button>
-        <button type="submit" class="btn btn-info m-1">Upload</button>
+        <button type="submit" routerLink="/bits-templates" class="btn btn-danger btn-sm m-1">Cancel</button>
+        <button type="submit" class="btn btn-info btn-sm m-1">Update</button>
     </div>
 </div>

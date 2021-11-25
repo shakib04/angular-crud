@@ -1,5 +1,4 @@
-
-<ng-template #content let-modal>
+<!-- <ng-template #content3 let-modal>
   <div class="modal-header">
     <h4 class="modal-title">Modal title</h4>
     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -12,196 +11,371 @@
   <div class="modal-footer">
     <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
   </div>
+</ng-template> -->
+
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+  </div>
+  <div class="modal-body">
+    <div class="form-group text-center">
+      <div class="success-animation">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+        <h3 class="modal-title" id="modal-basic-title">Deleted!</h3>
+        <h4 class="">Your file has been deleted.</h4>
+        <button type="button" class="btn btn-lg btn-outline-info" (click)="modal.close('Ok click')">Ok</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+  </div>
 </ng-template>
 
+<ng-template #content2 let-modal>
+  <div class="modal-header">
+  </div>
+  <div class="modal-body">
+    <div class="form-group text-center">
+      <div class="success-animation">
+        <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;">
+          <div class="swal2-icon-content">!</div>
+        </div>
+        <h2 class="modal-title m-4" id="modal-delete-title">Are you sure?</h2>
+        <h4 class="">You won't be able to revert this!</h4>
+        <button type="button" class="btn btn-lg btn-outline-info m-2" (click)="modal.close('Yes')">Yes, delete
+          it</button>
+        <button type="button" class="btn btn-lg btn-outline-danger m-2"
+          (click)="modal.close('Cancel click')">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
 
-<div class="btn-groups text-right ">
-  <button routerLink="/upload-templates" class="btn btn-dark btn-sm px-md-3" data-placement="top" data-toggle="tooltip"
-    title="View" type="submit">
-    Upload New Templates
-  </button>
+<div class="container-fluid">
+
+  <div class="btn-groups text-right m-4">
+    <button routerLink="/upload-templates" class="btn btn-dark btn-sm px-md-3" data-placement="top"
+      data-toggle="tooltip" title="View" type="submit">
+      Upload New Templates
+    </button>
+  </div>
+
+
+  <caption style="font-size: 25px;" class="text-center d-block">Bits Templates</caption>
+
+  <table aria-describedby="page-heading" class="table table-hover">
+
+    <thead>
+      <tr>
+        <th scope="col">S/L</th>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col">Type</th>
+        <th scope="col">Download</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td>Template - Word - Letter</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Template - Letterhead - Internal 2</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>03</td>
+        <td>Template - Word - Letter</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Template - Letterhead - Internal 2</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>02</td>
+        <td>Template - Word - Letter</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+            Download
+          </button>
+        </td>
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Template - Letterhead - Internal 2</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+
+      </tr>
+
+
+      <tr>
+        <td>02</td>
+        <td>Template - Word - Letter</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Template - Letterhead - Internal 2</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td>02</td>
+        <td>Template - Word - Letter</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+            Download
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Template - Letterhead - Internal 2</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>02</td>
+        <td>Template - Word - Letter</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>Template - Letterhead - Internal 2</td>
+        <td>Communication Templates</td>
+        <td>Public</td>
+        <td>
+          <button class="btn btn-primary btn-sm"
+            (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
+            Download
+          </button>
+        </td>
+
+        <td>
+          <button routerLink="/edit-templates" class="btn btn-secondary btn-sm m-1">
+            Edit
+          </button>
+        </td>
+
+        <td>
+          <button class="btn btn-danger btn-sm m-1" (click)="delete(content2, content)">
+            Remove
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>
-
-
-<caption style="font-size: 25px;" class="text-center d-block">Bits Templates</caption>
-
-<table aria-describedby="page-heading" class="table table-hover m-3">
-
-  <thead>
-    <tr>
-      <th scope="col">S/L</th>
-      <th scope="col" class="text-nowrap">Title</th>
-      <th scope="col">Category</th>
-      <th scope="col">Type</th>
-      <th scope="col">Download</th>
-      <th scope="col" colspan="2">Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>01</td>
-      <td>Template - Word - Letter</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-          Download
-        </button>
-      </td>
-
-      <td>
-        <button class="btn btn-secondary btn-sm m-1"
-          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-          Edit
-        </button>
-        <button class="btn btn-danger btn-sm m-1" (click)="openLg(content)">
-          Remove
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td>Template - Letterhead - Internal 2</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
-          Download
-        </button>
-      </td>
-    </tr>
-
-    <tr>
-      <td>03</td>
-      <td>Template - Word - Letter</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-          Download
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td>Template - Letterhead - Internal 2</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
-          Download
-        </button>
-      </td>
-    </tr>
-
-    <tr>
-      <td>02</td>
-      <td>Template - Word - Letter</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-          Download
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td>Template - Letterhead - Internal 2</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
-          Download
-        </button>
-      </td>
-    </tr>
-
-
-    <tr>
-      <td>02</td>
-      <td>Template - Word - Letter</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-          Download
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td>Template - Letterhead - Internal 2</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
-          Download
-        </button>
-      </td>
-    </tr>
-
-
-
-    <tr>
-      <td>02</td>
-      <td>Template - Word - Letter</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-          Download
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td>Template - Letterhead - Internal 2</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
-          Download
-        </button>
-      </td>
-    </tr>
-
-
-    <tr>
-      <td>02</td>
-      <td>Template - Word - Letter</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Word - Letter', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20Word%20-%20Letter.docx', 'docx')">
-          Download
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>02</td>
-      <td>Template - Letterhead - Internal 2</td>
-      <td>Communication Templates</td>
-      <td>Public</td>
-      <td>
-        <button class="btn btn-primary btn-sm"
-          (click)="showPDF('Template - Letterhead - Internal 2', 'http://10.42.54.19:8189/da/docs/x650100/templates/Template%20-%20PPT.pptx', 'pptx')">
-          Download
-        </button>
-      </td>
-    </tr>
-
-  </tbody>
-</table>
