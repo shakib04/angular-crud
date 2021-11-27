@@ -177,7 +177,7 @@
 
 <div ng-hide="myValue" class="ng-hide"></div>
 
-<h2 ng-hide="myValue">good</h2>
+<h2 *ngIf="showButton">good</h2>
 
 Hide: <input type="checkbox" ng-model="checked6" aria-label="Toggle ngHide"><br />
 <div class="check-element funky-show-hide" ng-hide="checked6">

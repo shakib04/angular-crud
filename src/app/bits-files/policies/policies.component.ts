@@ -10,6 +10,8 @@ import { faSquare, faCheckSquare, faTimes, faPencilAlt } from '@fortawesome/free
 })
 export class PoliciesComponent implements OnInit {
 
+  showButton:boolean=false
+
   constructor(
     private modalService: NgbModal, 
     private library: FaIconLibrary) 
@@ -23,8 +25,4 @@ export class PoliciesComponent implements OnInit {
   openLg(content: any) {
     this.modalService.open(content, { size: 'lg' });
   }
-
-
-  
-
 }

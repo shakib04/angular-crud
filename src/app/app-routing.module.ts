@@ -8,6 +8,7 @@ import { UploadTemplatesComponent } from './bits-files/templates/upload-template
 import { UploadPolicyComponent } from './bits-files/upload-policy/upload-policy.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { InputForms } from './inputs/input-forms.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'upload-policy', component: UploadPolicyComponent },
   { path: 'upload-templates', component: UploadTemplatesComponent },
   { path: 'edit-templates', component: EditTemplatesComponent },
+  { path: 'dummy-input', component: InputForms }
   //{ path: '', redirectTo:'books',pathMatch: 'full' }
 ];
 
@@ -33,5 +35,5 @@ const routes: Routes = [
 
 
 export class AppRoutingModule {
-//https://youtu.be/G46fjVzQ7BQ?t=5294
+  //https://youtu.be/G46fjVzQ7BQ?t=5294
 }

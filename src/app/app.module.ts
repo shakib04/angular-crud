@@ -24,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UploadPolicyComponent } from './bits-files/upload-policy/upload-policy.component';
 import { UploadTemplatesComponent } from './bits-files/templates/upload-templates.component';
 import { EditTemplatesComponent } from './bits-files/templates/edit-templates.component';
+import { InputForms } from './inputs/input-forms.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EditTemplatesComponent } from './bits-files/templates/edit-templates.co
     FormsComponent,
     UploadPolicyComponent,
     UploadTemplatesComponent,
-    EditTemplatesComponent
+    EditTemplatesComponent,
+    InputForms
   ],
   imports: [
     BrowserModule,
