@@ -1,2 +1,31 @@
-<h1>Book Name</h1>
-<input type="text" (keyup)="getVal($event.target.value)" name="" id="" />
+<h1>Name</h1>
+<input type="text" name="" id="" /> <br>
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name" (ngModelChange)="afterChange()">
+
+<button (click)="updateName()">Change Name</button>
+
+<br>
+
+<p></p>
+<p></p>
+
+<ul>
+    <li *ngFor="let lang of filteredLangs">{{ lang }}</li>
+</ul>
+
+<p></p>
+<p></p>
+<p></p>
+<p *ngIf="name.value.length > 3">Hello, {{ name.value }}</p>
+
+
+
+<p>You can do filter table data, in this case with observables and our <code>NgbHighlight</code> component used in
+    Typeahead</p>
+
+    <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+    </div>
+    

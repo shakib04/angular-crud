@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';// <- import PdfViewerModule
 
@@ -25,6 +25,9 @@ import { UploadPolicyComponent } from './bits-files/upload-policy/upload-policy.
 import { UploadTemplatesComponent } from './bits-files/templates/upload-templates.component';
 import { EditTemplatesComponent } from './bits-files/templates/edit-templates.component';
 import { InputForms } from './inputs/input-forms.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdTableFiltering } from './search/table-filtering';
+import { NgbdTableFilteringModule } from './search/table-filtering.module';
 
 @NgModule({
   declarations: [
@@ -49,11 +52,13 @@ import { InputForms } from './inputs/input-forms.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule, 
     PdfViewerModule,
     NgxExtendedPdfViewerModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
