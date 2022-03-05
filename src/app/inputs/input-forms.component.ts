@@ -16,6 +16,9 @@ export class InputForms implements OnInit{
     
     name = new FormControl('');
     nameString = String;
+    phoneNo?:string;
+
+    nameOfMyCountry = 'Bangladesh';
 
     langs = ['bn', 'en', 'hindi', 'russia', 'german']
     filteredLangs = this.langs;
@@ -26,6 +29,11 @@ export class InputForms implements OnInit{
     ngOnInit(): void {
         console.log(`test`);
         
+    }
+
+    getPhoneNo(phoneNo: string): void{
+        console.log(typeof (phoneNo));
+        this.phoneNo = phoneNo;
     }
 
     afterChange(): void{

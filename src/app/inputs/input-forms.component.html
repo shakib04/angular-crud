@@ -24,8 +24,18 @@
 <p>You can do filter table data, in this case with observables and our <code>NgbHighlight</code> component used in
     Typeahead</p>
 
-    <div class="row">
-        <div class="col-md-4">.col-md-4</div>
-        <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
-    </div>
-    
+<div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+</div>
+
+
+<h2>template variables</h2>
+<input #myName type="text" name="" placeholder="type your name" id="">
+
+<h3 *ngIf="myName.value">{{myName.value}}</h3>
+<h1>{{nameOfMyCountry.toUpperCase()}}</h1>
+
+<h2>Phone number</h2>
+<input #phone placeholder="phone number" /> <button (click)="getPhoneNo(phone.value)">Click here</button>
+<h3>{{phoneNo}}</h3>

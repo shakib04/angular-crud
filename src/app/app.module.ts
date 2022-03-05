@@ -9,7 +9,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookListComponent } from './book-list/book-list.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
@@ -28,6 +28,10 @@ import { InputForms } from './inputs/input-forms.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdTableFiltering } from './search/table-filtering';
 import { NgbdTableFilteringModule } from './search/table-filtering.module';
+import { RouterModule } from '@angular/router';
+import {NgxFileDropModule} from "ngx-file-drop";
+import {AppServerModule} from "./app.server.module";
+import {NgxFileDropComponent} from "./ngx-file-drop/ngx-file-drop.component";
 
 @NgModule({
   declarations: [
@@ -47,18 +51,22 @@ import { NgbdTableFilteringModule } from './search/table-filtering.module';
     UploadPolicyComponent,
     UploadTemplatesComponent,
     EditTemplatesComponent,
-    InputForms
+    InputForms,
+    routingComponents,
+    NgxFileDropComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     PdfViewerModule,
     NgxExtendedPdfViewerModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    RouterModule,
+    NgxFileDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

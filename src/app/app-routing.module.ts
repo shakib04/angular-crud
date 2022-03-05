@@ -11,6 +11,9 @@ import { CreateBookComponent } from './create-book/create-book.component';
 import { InputForms } from './inputs/input-forms.component';
 import { NgbdTableFiltering } from './search/table-filtering';
 import { UpdateBookComponent } from './update-book/update-book.component';
+import {DepartmentListComponent} from "./department-list/department-list.component";
+import {EmployeeListComponent} from "./employee-list/employee-list.component";
+import {NgxFileDropComponent} from "./ngx-file-drop/ngx-file-drop.component";
 
 
 const routes: Routes = [
@@ -25,6 +28,8 @@ const routes: Routes = [
   { path: 'edit-templates', component: EditTemplatesComponent },
   { path: 'dummy-input', component: InputForms },
   { path: 'search-table', component: NgbdTableFiltering },
+  {path: 'departments', component: DepartmentListComponent},
+  {path: 'employees', component: EmployeeListComponent},
   //{ path: '', redirectTo:'books',pathMatch: 'full' }
 ];
 
@@ -39,3 +44,5 @@ const routes: Routes = [
 export class AppRoutingModule {
   //https://youtu.be/G46fjVzQ7BQ?t=5294
 }
+
+export const routingComponents = [DepartmentListComponent, EmployeeListComponent];
