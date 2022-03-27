@@ -14,6 +14,7 @@ import { UpdateBookComponent } from './update-book/update-book.component';
 import {DepartmentListComponent} from "./department-list/department-list.component";
 import {EmployeeListComponent} from "./employee-list/employee-list.component";
 import {NgxFileDropComponent} from "./ngx-file-drop/ngx-file-drop.component";
+import {UploadMultipleFileComponent} from "./upload-multiple-files/upload-multiple-file-component";
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'search-table', component: NgbdTableFiltering },
   {path: 'departments', component: DepartmentListComponent},
   {path: 'employees', component: EmployeeListComponent},
+  {path: 'upload-multiple-file', component: UploadMultipleFileComponent},
   //{ path: '', redirectTo:'books',pathMatch: 'full' }
 ];
 

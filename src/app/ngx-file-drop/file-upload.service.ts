@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import {HttpClient, HttpResponse} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
@@ -40,5 +40,25 @@ export class FileUploadService {
     // Make http post request over api
     // with formData as req
     return this.http.post("http://localhost:8082/file/upload", formData);
+  }
+
+  uploadMultiple(files: any):Observable<any>{
+    const formData = new FormData();
+    formData.append('files', files);
+    for (const file of files){
+      const ss:File = file;
+      formData.append('files', ss);
+    }
+    console.log(files)
+    console.log(formData);
+    return this.http.post("http://localhost:8082/file/upload/multiple", formData);
+  }
+
+  uploadMultiple2(formData: FormData):Observable<any>{
+    //formData.append('files', files);
+
+    //console.log(files)
+    //console.log(formData);
+    return this.http.post("http://localhost:8082/file/upload/multiple", formData, {observe: 'response'});
   }
 }

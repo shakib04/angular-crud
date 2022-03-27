@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   NgxFileDropEntry,
   FileSystemFileEntry
   // FileSystemDirectoryEntry
 } from "ngx-file-drop";
-import { FileUploadService } from "./file-upload.service";
+import {FileUploadService} from "./file-upload.service";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-ngx-file-drop',
@@ -14,17 +15,46 @@ import { FileUploadService } from "./file-upload.service";
 export class NgxFileDropComponent implements OnInit {
 
   [x: string]: any;
-  shortLink: string = "";
+  formData!: FormGroup;
 
-  constructor(private fileUploadService: FileUploadService) { }
+  shortLink: string = "";
+  successFullyUploadedFiles: string[] = []
+
+  constructor(private formBuilder: FormBuilder, private fileUploadService: FileUploadService) {
+  }
 
   ngOnInit(): void {
+    this.formData = this.formBuilder.group({
+      files   : []
+    });
   }
 
   public files: NgxFileDropEntry[] = [];
 
+  public droppedAndUploadMultipleFiles(files: NgxFileDropEntry[]) {
+    alert('uploading multiple files');
+    const formData: FormData = new FormData();
+    for (const file of files){
+      const fileEntry = file.fileEntry as FileSystemFileEntry;
+      fileEntry.file((ss: File) => {
+        formData.append('files', ss, ss.name);
+      })
+    }
+    /*this.fileUploadService.uploadMultiple(files).subscribe(res => {
+      if (res.body === true){
+        alert('done')
+      }
+    })*/
+
+    this.fileUploadService.uploadMultiple2(formData).subscribe(res => {
+      if (res.body === true){
+        alert('done')
+      }
+    })
+  }
+
   public dropped(files: NgxFileDropEntry[]) {
-    if (files.length > 6) {
+    if (files.length > 100) {
       window.alert("Cannot add more than 6 Files at a time.");
     } else {
       // this.files = files;
@@ -40,7 +70,7 @@ export class NgxFileDropComponent implements OnInit {
               //files array is used to display
               //the files to the user which will be uploaded
               this.files.push(droppedFile);
-              if (this.files.length < 7) {
+              if (this.files.length < 1007) {
                 // Here you can access the real file
                 // console.log(droppedFile.relativePath, file);
                 console.log(droppedFile);
@@ -51,7 +81,7 @@ export class NgxFileDropComponent implements OnInit {
                     // Short link via api response
                     this.shortLink = event.link;
                   }
-                });
+                }, (error => console.log(error)));
               } else {
                 window.alert("Maximum 7 files are allowed.");
               }
@@ -75,7 +105,7 @@ export class NgxFileDropComponent implements OnInit {
 
   isFileAllowed(fileName: string) {
     let isFileAllowed = false;
-    const allowedFiles = [".pdf", ".jpg", ".jpeg", ".png", '.docx'];
+    const allowedFiles = [".pdf", ".jpg", ".jpeg", ".png", '.docx', '.zip'];
     const regex = /(?:\.([^.]+))?$/;
     const extension = regex.exec(fileName);
     if (undefined !== extension && null !== extension) {
@@ -88,19 +118,19 @@ export class NgxFileDropComponent implements OnInit {
     return isFileAllowed;
   }
 
-  isFileSizeAllowed(size: number):boolean {
+  isFileSizeAllowed(size: number): boolean {
     let isFileSizeAllowed = false;
-    if (size < 2097152) {
+    if (size < 20971520) {
       isFileSizeAllowed = true;
     }
     return isFileSizeAllowed;
   }
 
-  public fileOver(event: any):void {
+  public fileOver(event: any): void {
     console.log(event);
   }
 
-  public fileLeave(event: any):void {
+  public fileLeave(event: any): void {
     console.log(event);
   }
 }

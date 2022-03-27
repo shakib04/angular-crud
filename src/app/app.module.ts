@@ -32,6 +32,7 @@ import { RouterModule } from '@angular/router';
 import {NgxFileDropModule} from "ngx-file-drop";
 import {AppServerModule} from "./app.server.module";
 import {NgxFileDropComponent} from "./ngx-file-drop/ngx-file-drop.component";
+import {UploadMultipleFileComponent} from "./upload-multiple-files/upload-multiple-file-component";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {NgxFileDropComponent} from "./ngx-file-drop/ngx-file-drop.component";
     EditTemplatesComponent,
     InputForms,
     routingComponents,
-    NgxFileDropComponent
+    NgxFileDropComponent,
+    UploadMultipleFileComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

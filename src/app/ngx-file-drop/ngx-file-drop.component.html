@@ -1,14 +1,14 @@
+changes
 <div class="center">
   <ngx-file-drop
     dropZoneLabel="Drop files here (max file 2 MB)"
-    (onFileDrop)="dropped($event)"
+    (onFileDrop)="droppedAndUploadMultipleFiles($event)"
     (onFileOver)="fileOver($event)"
     (onFileLeave)="fileLeave($event)"
     [showBrowseBtn]="true"
     browseBtnLabel="Browse files"
     browseBtnClassName="btn btn-primary m-2"
-    dropZoneClassName="my-style"
-  >
+    dropZoneClassName="my-style">
     <!-- <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
         Optional custom content that replaces the the entire default content.
         <button type="button" (click)="openFileSelector()">Browse Files</button>
