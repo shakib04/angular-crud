@@ -303,6 +303,7 @@
   }
 </style>
 
+
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img width="40" alt="Angular Logo"
@@ -331,6 +332,21 @@
 <div class="content" role="main">
 
   <router-outlet></router-outlet>
+
+  <app-footer *ngIf="myInput.length < 20" [newItem]="newItem">
+    <p #testPara2>hello footer</p>
+  </app-footer>
+
+  <p #testPara>test component paragraph</p>
+  <input type="text" #inputElement>
+
+  <p >test para 2</p>
+
+  <button (click)="onClickBtn(inputElement)">click me</button>
+  <button (click)="clickHideFooter()">hide footer</button>
+
+  {{myInput}}
+
   <app-heroes></app-heroes>
 
   <div *ngFor="let book of books">
@@ -534,7 +550,7 @@
   </div>
 
   <!-- Footer -->
-  <footer>
+  <footer *ngIf="true">
     Love Angular?&nbsp;
     <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
       <div class="github-star-badge">

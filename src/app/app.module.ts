@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
+import { FooterComponent } from './footer/footer.component';
+import { NgLifeCycleComponent } from './ng-life-cycle/ng-life-cycle.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { DeleteBookComponent } from './delete-book/delete-book.component';
     CreateBookComponent,
     UpdateBookComponent,
     DeleteBookComponent,
+    FooterComponent,
+    NgLifeCycleComponent,
     
   ],
   imports: [
