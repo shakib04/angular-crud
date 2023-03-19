@@ -15,18 +15,10 @@ export class AppComponent implements OnInit{
   constructor(private bookService: BookService){}
 
 ngOnInit(){
-  this.getBookes(); 
+  this.getBooks();
 }
 
-  public getBookes(): void {
-    this.bookService.getBooks().subscribe(
-      (response: Book[]) => {
-        //this.books = response;
-        console.log(this.books);
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
+  public getBooks(): void {
+    alert('hello')
   }
 }

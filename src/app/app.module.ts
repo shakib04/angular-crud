@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { DeleteBookComponent } from './delete-book/delete-book.component';
+import { FileTestComponent } from './file-test/file-test.component';
+import { AppMoveComponent } from './app-move/app-move.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { DeleteBookComponent } from './delete-book/delete-book.component';
     CreateBookComponent,
     UpdateBookComponent,
     DeleteBookComponent,
+    FileTestComponent,
+    AppMoveComponent,
     
   ],
   imports: [
